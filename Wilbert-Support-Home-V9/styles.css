@@ -1,0 +1,141 @@
+:root {
+    --screendim-x: 1vw;
+    --screendim-y: 1vh;
+}
+
+html {
+    font-size: calc(0.1 * var(--screendim-y));
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: calc(0.1 * var(--screendim-y) / 2);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: lightgrey;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+
+.background-image {
+    height: calc(100 * var(--screendim-y));
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.link {
+    width: calc(60 * var(--screendim-x));
+    height: calc(20 * var(--screendim-y));
+    margin: calc(2 * var(--screendim-x)) auto;
+    box-shadow: 0 calc(0.5 * var(--screendim-x)) calc(1 * var(--screendim-x)) black;
+    border-radius: calc(0.5 * var(--screendim-x));
+    text-decoration: none;
+    color: inherit;
+    font-size: calc(3 * var(--screendim-y));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: box-shadow 0.3s;
+    position: absolute;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.link:hover {
+    box-shadow: 0 calc(1 * var(--screendim-x)) calc(2 * var(--screendim-x)) rgba(0, 0, 0, 0.2);
+}
+
+.link-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: calc(0.5 * var(--screendim-x));
+    opacity: 0.8;
+}
+
+.link-banner,
+.small-link-banner {
+    position: absolute;
+    top: 15%;
+    height: 20%;
+    width: 100%;
+    padding: calc(2 * var(--screendim-y)) 0;
+    text-align: center;
+    color: white;
+    font-size: calc(4 * var(--screendim-y));
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 4;
+}
+
+.link1 {
+    top: calc(20 * var(--screendim-y));
+    left: calc(20 * var(--screendim-x));
+}
+
+.link2 {
+    top: calc(45 * var(--screendim-y));
+    left: calc(20 * var(--screendim-x));
+}
+
+.link3 {
+    top: calc(45 * var(--screendim-y));
+    left: calc(20 * var(--screendim-x));
+}
+
+.welcome-message {
+    position: absolute;
+    top: calc(75 * var(--screendim-y));
+    width: 100%;
+    font-size: calc(4 * var(--screendim-x));
+    color: white;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: calc(1 * var(--screendim-y)) calc(2 * var(--screendim-x));
+    border-radius: calc(0.5 * var(--screendim-x));
+    margin: 0;
+    z-index: 2;
+    text-align: center;
+}
+
+/* Hidden links inside link3 */
+.link3 .hidden-links {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.9); /* Increased opacity for better contrast */
+    border-radius: calc(0.5 * var(--screendim-x));
+    z-index: 5;
+}
+
+.link3:hover .hidden-links {
+    display: flex;
+}
+
+.hidden-links a {
+    color: white;
+    text-decoration: none;
+    margin: calc(1 * var(--screendim-y)) 0;
+    font-size: calc(2.5 * var(--screendim-y)); /* Increased font size */
+    padding: calc(1.5 * var(--screendim-y)) calc(2.5 * var(--screendim-x)); /* Increased padding */
+    background-color: rgba(0, 0, 0, 0.1); /* Slightly darker background for better readability */
+    border-radius: calc(0.5 * var(--screendim-x));
+    width: 80%;
+    text-align: center;
+}
+
+.hidden-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
